@@ -150,6 +150,7 @@
     <ClCompile Include="cezars.cpp" />
     <ClCompile Include="codes.cpp" />
     <ClCompile Include="conteiners.cpp" />
+    <ClCompile Include="numerics.cpp" />
     <ClCompile Include="Procedure.cpp" />
     <ClCompile Include="zamenas.cpp" />
   </ItemGroup>
@@ -157,6 +158,7 @@
     <ClInclude Include="cezar_atd.h" />
     <ClInclude Include="code_atd.h" />
     <ClInclude Include="conteiner.h" />
+    <ClInclude Include="numeric_atd.h" />
     <ClInclude Include="zamena_atd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
