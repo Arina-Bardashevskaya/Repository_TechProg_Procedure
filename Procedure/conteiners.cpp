@@ -38,6 +38,26 @@ namespace simple_codes {
 	};
 
 	void Out(code& s, ofstream& ofst);
+
+	bool Compare(code* first, code* second);
+
+	void Sort(container& c)
+	{
+		for (int i = 0; i < c.len - 1; i++)
+		{
+			for (int j = i + 1; j < c.len; j++)
+			{
+				if (Compare(c.cont[i], c.cont[j]))
+				{
+					code* tmp = c.cont[i];
+					c.cont[i] = c.cont[j];
+					c.cont[j] = tmp;
+				}
+			}
+		}
+	}
+
+	void Out(code& s, ofstream& ofst);
 	void Out(container& c, ofstream& ofst)
 	{
 		ofst << "Container contains " << c.len
