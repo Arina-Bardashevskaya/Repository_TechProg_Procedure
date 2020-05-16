@@ -30,6 +30,33 @@ namespace simple_codes {
 		}
 	}
 
+	int MesLength(code& s)
+	{
+		int length = 0;
+		while (s.message[length] != '\0' && length < 20) length++;
+		return length;
+	};
+
+	void Out(code& s, ofstream& ofst);
+
+	bool Compare(code* first, code* second);
+
+	void Sort(container& c)
+	{
+		for (int i = 0; i < c.len - 1; i++)
+		{
+			for (int j = i + 1; j < c.len; j++)
+			{
+				if (Compare(c.cont[i], c.cont[j]))
+				{
+					code* tmp = c.cont[i];
+					c.cont[i] = c.cont[j];
+					c.cont[j] = tmp;
+				}
+			}
+		}
+	}
+
 	void Out(code& s, ofstream& ofst);
 	void Out(container& c, ofstream& ofst)
 	{
@@ -39,6 +66,8 @@ namespace simple_codes {
 		{
 			ofst << i << ": ";
 			Out(*(c.cont[i]), ofst);
+			ofst << "Length = "
+				<< MesLength(*(c.cont[i])) << endl;
 		}
 	}
 } // end simple_codes namespace
