@@ -14,6 +14,7 @@ namespace simple_codes
 			cezar t;
 		};
 		char message[20];
+		char owner[20];
 
 	};
 }
