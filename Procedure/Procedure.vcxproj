@@ -151,6 +151,7 @@
     <ClCompile Include="codes.cpp" />
     <ClCompile Include="conteiners.cpp" />
     <ClCompile Include="Procedure.cpp" />
+    <ClCompile Include="sort.cpp" />
     <ClCompile Include="zamenas.cpp" />
   </ItemGroup>
   <ItemGroup>
