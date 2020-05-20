@@ -3,11 +3,11 @@
 #include "zamena_atd.h"
 
 using namespace std;
-const int maxStringeSize = 80;
+const int MAX_STRING_SIZE = 80;
 
 namespace simple_codes
 {
-	string CodingZamena(char message[maxStringeSize], int rule)
+	string CodingZamena(char message[MAX_STRING_SIZE], int rule)
 	{
 		string alf = "abcdefghijklmnopqrstuvwxyz";
 		string sz1 = "zyxwvutsrqponmlkjihgfedcba";
@@ -20,7 +20,7 @@ namespace simple_codes
 
 		string str_mes = "";
 		int i = 0;
-		while ((message[i]) != '\0' && i < maxStringeSize)
+		while ((message[i]) != '\0' && i < MAX_STRING_SIZE)
 		{
 			str_mes += message[i];
 			i++;
@@ -65,7 +65,7 @@ namespace simple_codes
 		ifst >> r.rule;
 	}
 
-	void Out(zamena& r, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize])
+	void Out(zamena& r, ofstream& ofst, char message[MAX_STRING_SIZE], char owner[MAX_STRING_SIZE])
 	{
 		string rulename = "Incorrect rule number";
 
@@ -77,4 +77,4 @@ namespace simple_codes
 			<< ", code = " << CodingZamena(message, r.rule)
 			<< ", owner = " << owner << ". ";
 	}
-} 
+} // end simple_codes namespace 

@@ -5,7 +5,8 @@
 
 using namespace std;
 
-namespace simple_codes {
+namespace simple_codes 
+{
 	// Сигнатуры требуемых внешних функций
 	void Init(container& c);
 	void Clear(container& c);
@@ -13,7 +14,7 @@ namespace simple_codes {
 	void Out(container& c, ofstream& ofst);
 	void Sort(container& c);
 	void OutZamena(container& c, ofstream& ofst);
-}
+} // end simple_codes namespace
 
 using namespace simple_codes;
 

@@ -4,7 +4,8 @@
 
 using namespace std;
 
-namespace simple_codes {
+namespace simple_codes 
+{
 	void Init(container& c) 
 	{ 
 		c.len = 0; 
@@ -92,4 +93,4 @@ namespace simple_codes {
 				ofst << endl;
 		}
 	}
-}
+} // end simple_codes namespace

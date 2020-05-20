@@ -3,7 +3,8 @@
 
 using namespace std;
 
-namespace simple_codes {
+namespace simple_codes 
+{
 	void In(zamena& r, ifstream& ist);
 	void In(cezar& t, ifstream& ist);
 	void In(numeric& t, ifstream& ist);
@@ -38,9 +39,9 @@ namespace simple_codes {
 		}
 	}
 
-	void Out(zamena& r, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
-	void Out(cezar& t, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
-	void Out(numeric& b, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
+	void Out(zamena& r, ofstream& ofst, char message[MAX_STRING_SIZE], char owner[MAX_STRING_SIZE]);
+	void Out(cezar& t, ofstream& ofst, char message[MAX_STRING_SIZE], char owner[MAX_STRING_SIZE]);
+	void Out(numeric& t, ofstream& ofst, char message[MAX_STRING_SIZE], char owner[MAX_STRING_SIZE]);
 
 	void Out(code& s, ofstream& ofst) 
 	{
@@ -59,10 +60,10 @@ namespace simple_codes {
 		}
 	}
 
-	int StrLength(char mes[maxStringeSize])
+	int StrLength(char mes[MAX_STRING_SIZE])
 	{
 		int length = 0;
-		while (mes[length] != '\0' && length < maxStringeSize) length++;
+		while (mes[length] != '\0' && length < MAX_STRING_SIZE) length++;
 		return length;
 	};
 
@@ -70,4 +71,4 @@ namespace simple_codes {
 	{
 		return StrLength(s.message);
 	};
-}
+} // end simple_codes namespace

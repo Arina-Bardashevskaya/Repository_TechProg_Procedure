@@ -7,5 +7,5 @@ namespace simple_codes
 	{
 		int rot;
 	};
-}
+} // end simple_codes namespace
 #endif

@@ -1,6 +1,8 @@
 #ifndef __conteiner__
 #define __conteiner__
-namespace simple_codes {
+
+namespace simple_codes 
+{
 	struct code;
 	struct container
 	{
@@ -8,5 +10,5 @@ namespace simple_codes {
 		int len;
 		code *cont[max_len];
 	};
-}
+} // end simple_codes namespace
 #endif
