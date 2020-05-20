@@ -30,7 +30,10 @@
     <ClCompile Include="zamenas.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="sort.cpp">
+        <ClCompile Include="numerics.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+      <ClCompile Include="sort.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,6 +48,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="conteiner.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="numeric_atd.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
