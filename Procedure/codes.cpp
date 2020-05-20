@@ -36,29 +36,34 @@ namespace simple_codes {
 			return 0;
 		}
 	}
-	void Out(zamena& r, ofstream& ofst, char message[20], char owner[20]);
-	void Out(cezar& t, ofstream& ofst, char message[20], char owner[20]);
-	void Out(numeric& t, ofstream& ofst, char message[20], char owner[20]);
+	void Out(zamena& r, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
+	void Out(cezar& t, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
+	void Out(numeric& t, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
 	void Out(code& s, ofstream& ofst) {
 		switch (s.k) {
 		case code::key::ZAMENA:
 			Out(s.r, ofst, s.message, s.owner);
 			break;
 		case code::key::CEZAR:
-			Out(s.r, ofst, s.message, s.owner);
+			Out(s.t, ofst, s.message, s.owner);
 			break;
 		case code::key::NUMERIC:
-			Out(s.r, ofst, s.message, s.owner);
+			Out(s.b, ofst, s.message, s.owner);
 			break;
 		default:
 			ofst << "Incorrect figure!" << endl;
 		}
 	}
 
-	int MesLength(code& s)
+	int StrLength(char mes[maxStringeSize])
 	{
 		int length = 0;
-		while (s.message[length] != '\0' && length < 20) length++;
+		while (mes[length] != '\0' && length < maxStringeSize) length++;
 		return length;
+	};
+
+	int MesLength(code& s)
+	{
+		return StrLength(s.message);
 	};
 } // end simple_codes namespace

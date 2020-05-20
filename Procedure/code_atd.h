@@ -5,6 +5,7 @@
 #include "numeric_atd.h"
 namespace simple_codes
 {
+	const int maxStringeSize = 80;
 	struct code
 	{
 		enum key { ZAMENA, CEZAR, NUMERIC };
@@ -14,8 +15,8 @@ namespace simple_codes
 			cezar t;
 			numeric b;
 		};
-		char message[20];
-		char owner[20];
+		char message[maxStringeSize];
+		char owner[maxStringeSize];
 
 	};
 }

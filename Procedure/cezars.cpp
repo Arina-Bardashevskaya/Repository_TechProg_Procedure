@@ -3,24 +3,32 @@
 #include "cezar_atd.h"
 
 using namespace std;
+const int maxStringeSize = 80;
 
-string codingCezar(char message[20], int rot)
+namespace simple_codes
 {
-	string alf = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy";
-	string str_mes = "";
-	int i = 0;
-	while ((message[i]) != '\n' && alf.find(tolower(message[i])) >= 0 && alf.find(tolower(message[i])) < 26 && i < 20)
+	string codingCezar(char message[maxStringeSize], int rot)
 	{
-		str_mes += message[i];
-		i++;
-	}
+		string alf = "abcdefghijklmnopqrstuvwxyz";
+		string ALF = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		string str_mes = "";
+		int i = 0;
+		while ((message[i]) != '\0' && i < maxStringeSize)
+		{
+			str_mes += message[i];
+			i++;
+		}
 
-	for (int i = 0; i < str_mes.length(); i++) {
-		int tmp = alf.find(tolower(str_mes[i]));
-		if (tmp >= 0)
-			str_mes[i] = alf[tmp + (rot % 26)];
+		for (int i = 0; i < str_mes.length(); i++) {
+			int tmp = alf.find(str_mes[i]);
+			if (tmp >= 0)
+				str_mes[i] = alf[(tmp + (rot % 26)) % 26];
+			tmp = ALF.find(str_mes[i]);
+			if (tmp >= 0)
+				str_mes[i] = ALF[(tmp + (rot % 26)) % 26];
+		}
+		return str_mes;
 	}
-	return str_mes;
 }
 
 namespace simple_codes
@@ -31,11 +39,11 @@ namespace simple_codes
 		ifst >> t.rot;
 	}
 
-	void Out(cezar& t, ofstream& ofst, char message[20], char owner[20])
+	void Out(cezar& t, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize])
 	{
 		ofst << "It is Cezar: rot = " << t.rot
 			<< ", open = " << message
 			<< ", code = " << codingCezar(message, t.rot)
-			<< ", owner = " << owner << "." << endl;
+			<< ", owner = " << owner << ". ";
 	}
 } // end simple_codes namespace
