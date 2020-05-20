@@ -30,13 +30,13 @@
     <ClCompile Include="zamenas.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-            <ClCompile Include="numerics.cpp">
+    <ClCompile Include="sort.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-      <ClCompile Include="sort.cpp">
+    <ClCompile Include="numerics.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-        <ClCompile Include="container_OutZamena.cpp">
+    <ClCompile Include="container_OutZamena.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

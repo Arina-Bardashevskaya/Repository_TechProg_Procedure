@@ -30,6 +30,7 @@ namespace simple_codes {
 			sp->k = code::key::NUMERIC;
 			In(sp->b, ifst);
 			ifst >> sp->message;
+			ifst >> sp->owner;
 			return sp;
 		default:
 			return 0;
@@ -37,6 +38,7 @@ namespace simple_codes {
 	}
 	void Out(zamena& r, ofstream& ofst, char message[20], char owner[20]);
 	void Out(cezar& t, ofstream& ofst, char message[20], char owner[20]);
+	void Out(numeric& t, ofstream& ofst, char message[20], char owner[20]);
 	void Out(code& s, ofstream& ofst) {
 		switch (s.k) {
 		case code::key::ZAMENA:
@@ -46,10 +48,17 @@ namespace simple_codes {
 			Out(s.r, ofst, s.message, s.owner);
 			break;
 		case code::key::NUMERIC:
-			Out(s.b, ofst, s.message);
+			Out(s.r, ofst, s.message, s.owner);
 			break;
 		default:
 			ofst << "Incorrect figure!" << endl;
 		}
 	}
+
+	int MesLength(code& s)
+	{
+		int length = 0;
+		while (s.message[length] != '\0' && length < 20) length++;
+		return length;
+	};
 } // end simple_codes namespace

@@ -3,7 +3,6 @@
 #include "zamena_atd.h"				
 #include "cezar_atd.h"	
 #include "numeric_atd.h"
-
 namespace simple_codes
 {
 	struct code

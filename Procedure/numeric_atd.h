@@ -3,8 +3,8 @@
 
 namespace simple_codes {
 	struct numeric {
-		int digit;
+		int digit; 
 	};
-} // end simple_codes namespace
+}
 #endif
 #pragma once

@@ -1,7 +1,6 @@
 #include <fstream>
 #include "code_atd.h"
 #include "conteiner.h"
-
 using namespace std;
 
 namespace simple_codes {
