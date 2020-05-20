@@ -10,14 +10,14 @@ namespace simple_codes
 	{
 		enum key { ZAMENA, CEZAR, NUMERIC };
 		key k;
-		union {
+		union 
+		{
 			zamena r;
 			cezar t;
 			numeric b;
 		};
 		char message[maxStringeSize];
 		char owner[maxStringeSize];
-
 	};
 }
 #endif

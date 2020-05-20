@@ -7,7 +7,7 @@ const int maxStringeSize = 80;
 
 namespace simple_codes
 {
-	string codingCezar(char message[maxStringeSize], int rot)
+	string CodingCezar(char message[maxStringeSize], int rot)
 	{
 		string alf = "abcdefghijklmnopqrstuvwxyz";
 		string ALF = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -19,7 +19,8 @@ namespace simple_codes
 			i++;
 		}
 
-		for (int i = 0; i < str_mes.length(); i++) {
+		for (int i = 0; i < str_mes.length(); i++) 
+		{
 			int tmp = alf.find(str_mes[i]);
 			if (tmp >= 0)
 				str_mes[i] = alf[(tmp + (rot % 26)) % 26];
@@ -29,10 +30,6 @@ namespace simple_codes
 		}
 		return str_mes;
 	}
-}
-
-namespace simple_codes
-{
 
 	void In(cezar& t, ifstream& ifst)
 	{
@@ -43,7 +40,7 @@ namespace simple_codes
 	{
 		ofst << "It is Cezar: rot = " << t.rot
 			<< ", open = " << message
-			<< ", code = " << codingCezar(message, t.rot)
+			<< ", code = " << CodingCezar(message, t.rot)
 			<< ", owner = " << owner << ". ";
 	}
 } // end simple_codes namespace

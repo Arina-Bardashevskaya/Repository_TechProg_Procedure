@@ -1,5 +1,6 @@
 #include <fstream>
 #include "code_atd.h"
+
 using namespace std;
 
 namespace simple_codes {
@@ -36,10 +37,13 @@ namespace simple_codes {
 			return 0;
 		}
 	}
+
 	void Out(zamena& r, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
 	void Out(cezar& t, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
-	void Out(numeric& t, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
-	void Out(code& s, ofstream& ofst) {
+	void Out(numeric& b, ofstream& ofst, char message[maxStringeSize], char owner[maxStringeSize]);
+
+	void Out(code& s, ofstream& ofst) 
+	{
 		switch (s.k) {
 		case code::key::ZAMENA:
 			Out(s.r, ofst, s.message, s.owner);
@@ -66,4 +70,4 @@ namespace simple_codes {
 	{
 		return StrLength(s.message);
 	};
-} // end simple_codes namespace
+}

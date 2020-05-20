@@ -1,13 +1,18 @@
-#include "conteiner.h"
+#include "conteiner_atd.h"
 #include "code_atd.h"	
 #include <fstream>
 
 using namespace std;
 
 namespace simple_codes {
-	void Init(container& c) { c.len = 0; }
-	void Clear(container& c) {
-		for (int i = 0; i < c.len; i++) {
+	void Init(container& c) 
+	{ 
+		c.len = 0; 
+	}
+	void Clear(container& c) 
+	{
+		for (int i = 0; i < c.len; i++) 
+		{
 			delete c.cont[i];
 		}
 		c.len = 0;
@@ -15,7 +20,8 @@ namespace simple_codes {
 
 	code* In(ifstream& ifdt);
 
-	void In(container& c, ifstream& ifst) {
+	void In(container& c, ifstream& ifst) 
+	{
 		while (!ifst.eof())
 		{
 			if (c.len > 99)
@@ -33,7 +39,7 @@ namespace simple_codes {
 
 	void Out(code& s, ofstream& ofst);
 
-	bool Compare(code* first, code* second);
+	bool Compare(code *first, code *second);
 
 	void Sort(container& c)
 	{
@@ -43,7 +49,7 @@ namespace simple_codes {
 			{
 				if (Compare(c.cont[i], c.cont[j]))
 				{
-					code* tmp = c.cont[i];
+					code  *tmp = c.cont[i];
 					c.cont[i] = c.cont[j];
 					c.cont[j] = tmp;
 				}
@@ -52,7 +58,9 @@ namespace simple_codes {
 	}
 
 	void Out(code& s, ofstream& ofst);
+
 	int MesLength(code& s);
+
 	void Out(container& c, ofstream& ofst)
 	{
 		ofst << "Container contains " << c.len
@@ -65,4 +73,23 @@ namespace simple_codes {
 				<< MesLength(*(c.cont[i])) << "." << endl;
 		}
 	}
-} // end simple_codes namespace
+
+	void OutZamena(container& c, ofstream& ofst)
+	{
+		ofst << "Container contains " << c.len
+			<< " elements." << endl;
+		ofst << "Only zamena's." << endl;
+		for (int i = 0; i < c.len; i++)
+		{
+			ofst << i << ": ";
+			if (c.cont[i]->k == code::ZAMENA)
+			{
+				Out(*(c.cont[i]), ofst);
+				ofst << "Length = "
+					<< MesLength(*(c.cont[i])) << "." << endl;
+			}
+			else
+				ofst << endl;
+		}
+	}
+}

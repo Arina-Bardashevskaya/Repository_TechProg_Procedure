@@ -2,7 +2,8 @@
 #define __numeric_atd__
 
 namespace simple_codes {
-	struct numeric {
+	struct numeric 
+	{
 		int digit; 
 	};
 }

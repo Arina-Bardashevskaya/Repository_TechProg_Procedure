@@ -6,7 +6,7 @@ namespace simple_codes {
 	{
 		enum { max_len = 100 };
 		int len;
-		code* cont[max_len];
+		code *cont[max_len];
 	};
 }
 #endif

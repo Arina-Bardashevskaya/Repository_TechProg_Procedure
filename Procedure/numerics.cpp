@@ -7,7 +7,7 @@ const int maxStringeSize = 80;
 
 namespace simple_codes
 {
-	string codingNumeric(char message[maxStringeSize], int digit)
+	string CodingNumeric(char message[maxStringeSize], int digit)
 	{
 		string alf = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy";
 		string str_mes = "";
@@ -28,10 +28,7 @@ namespace simple_codes
 		}
 		return str_result;
 	}
-}
 
-namespace simple_codes
-{
 	void In(numeric& b, ifstream& ifst)
 	{
 		ifst >> b.digit;
@@ -41,7 +38,7 @@ namespace simple_codes
 	{
 		ofst << "It is Numeric: digit = " << b.digit
 			<< ", open = " << message
-			<< ", code = " << codingNumeric(message, b.digit)
+			<< ", code = " << CodingNumeric(message, b.digit)
 			<< ", owner = " << owner << ". ";
 	}
 }

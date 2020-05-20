@@ -7,7 +7,7 @@ const int maxStringeSize = 80;
 
 namespace simple_codes
 {
-	string codingZamena(char message[maxStringeSize], int rule)
+	string CodingZamena(char message[maxStringeSize], int rule)
 	{
 		string alf = "abcdefghijklmnopqrstuvwxyz";
 		string sz1 = "zyxwvutsrqponmlkjihgfedcba";
@@ -26,40 +26,40 @@ namespace simple_codes
 			i++;
 		}
 
-		for (int i = 0; i < str_mes.length(); i++) {
+		for (int i = 0; i < str_mes.length(); i++) 
+		{
 			int tmp = alf.find(str_mes[i]);
-			if (tmp >= 0) {
-				if (rule == 1) {
+			if (tmp >= 0) 
+			{
+				if (rule == 1) 
 					str_mes[i] = sz1[tmp];
-				}
-				if (rule == 2) {
+				
+				if (rule == 2) 
 					str_mes[i] = sz2[tmp];
-				}
-				if (rule == 3) {
+				
+				if (rule == 3) 
 					str_mes[i] = sz3[tmp];
-				}
+				
 			}
 
 			tmp = ALF.find(str_mes[i]);
-			if (tmp >= 0) {
-				if (rule == 1) {
+			if (tmp >= 0) 
+			{
+				if (rule == 1) 
 					str_mes[i] = SZ1[tmp];
-				}
-				if (rule == 2) {
+				
+				if (rule == 2) 
 					str_mes[i] = SZ2[tmp];
-				}
-				if (rule == 3) {
+				
+				if (rule == 3) 
 					str_mes[i] = SZ3[tmp];
-				}
+				
 			}
 		}
 
 		return str_mes;
 	}
-}
 
-namespace simple_codes
-{
 	void In(zamena& r, ifstream& ifst)
 	{
 		ifst >> r.rule;
@@ -74,7 +74,7 @@ namespace simple_codes
 		if (r.rule == 3) rulename = "Keyword-change";
 		ofst << "It is Zamena: rule = " << rulename
 			<< ", open = " << message
-			<< ", code = " << codingZamena(message, r.rule)
+			<< ", code = " << CodingZamena(message, r.rule)
 			<< ", owner = " << owner << ". ";
 	}
-} // end simple_codes namespace
+} 

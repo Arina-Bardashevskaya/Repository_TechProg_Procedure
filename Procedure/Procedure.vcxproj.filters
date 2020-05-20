@@ -50,10 +50,10 @@
     <ClInclude Include="zamena_atd.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="conteiner.h">
+    <ClInclude Include="numeric_atd.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="numeric_atd.h">
+    <ClInclude Include="conteiner_atd.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
