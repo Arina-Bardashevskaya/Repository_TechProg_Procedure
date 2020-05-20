@@ -16,6 +16,7 @@ namespace simple_codes
 			numeric b;
 		};
 		char message[20];
+		char owner[20];
 
 	};
 }
